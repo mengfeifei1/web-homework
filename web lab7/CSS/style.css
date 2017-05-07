@@ -1,0 +1,32 @@
+body{
+	font-family:'Arial';
+	font-size:12px;
+	color:gray;
+	line-height: 2em;
+}
+a{
+	color:#727272;
+	text-decoration:none; 
+}
+a:hover{
+	text-decoration:underline; 
+}
+.c{
+	font-size:14px;
+	color:#b9f605;
+	font-weight: bold;
+}
+.cl{
+	color:white;
+}
+.cl1{
+	color:#fdb306;
+}
+a:hover.cl{
+	color:#b9f605;
+	text-decoration:none;
+}
+a:hover.cl1{
+	color:#b9f605;
+	text-decoration:none;
+}
