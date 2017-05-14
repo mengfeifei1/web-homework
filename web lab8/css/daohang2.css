@@ -1,0 +1,33 @@
+.cl{
+	background-image:url(../images/bj.png);
+	text-align:center;
+	width: 220px;
+	height: 381px;
+}
+.cl1{
+	background-image:url(../images/header.png);
+	width: 175px;
+	height: 65px;
+}
+ul li{
+	list-style-type: none;
+	line-height: 30px;
+}
+.cl2{
+	width: 170px;
+	height: 36px;
+	color:white;
+	font-size: 18px;
+	background-image:url(../images/lvbiaoti.png);
+	background-repeat: no-repeat;
+}
+.cl3{
+	background-image:url(../images/baibiaoti.png);
+	background-repeat: no-repeat;
+	width: 170px;
+	height: 40px;
+	font-size: 18px;
+	margin-top: 10px;
+
+}
+

@@ -1,0 +1,39 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	text-align: left;
+}
+li{
+	list-style: none;
+}
+.cl{
+	margin: auto;
+	width: 1005px;
+	background: url(../images/bg.gif) top no-repeat;
+	height: 75px;
+	text-align: center;
+	color: #b9f605;
+	font-size: 14px;
+	font-weight:bold;
+}
+.cl ul{
+	width: 1005px;
+	margin: auto;
+	height: 75px;
+	line-height: 75px;
+	vertical-align: middle;
+}
+.cl li{
+	float: left;
+	padding: 0px 15px;
+}
+.cl a{
+	color: #fff;
+	text-decoration: none;
+}
+.cl a:hover{
+	color: #b9f605;
+}
+.cl .cl1{
+	color: #fdb306;
+}
