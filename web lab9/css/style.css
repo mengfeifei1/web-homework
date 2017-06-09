@@ -6,6 +6,13 @@ body{
 	background-repeat:repeat-x;
 
 }
+a{
+	text-decoration: none;
+	color: #522a06;
+}
+a:hover{
+	text-decoration: underline;
+}
 #header{
 	width: 1500px;
 	height:200px;
@@ -56,6 +63,9 @@ body{
 .daohang ul li a{
 	text-decoration: none;
 	margin-right:15px; 
+}
+.daohang ul li a:hover{
+	text-decoration: underline;
 }
 .daohang input{
 	position:relative;
@@ -233,6 +243,9 @@ body{
     text-decoration: none;
     float: left;
     margin-top: 40px; 
+}
+.footer ul li a:hover{
+	text-decoration: underline;
 }
 .cll{
 	position:relative;
