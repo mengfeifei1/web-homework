@@ -1,0 +1,163 @@
+body{
+	width: 1338px;
+	height: 1430px;
+	background-color: #f8d0eb;
+}
+#header{
+	width: 1338px;
+	height: 300px;
+}
+.banner {
+	width: 1338px;
+	height: 250px;
+	margin-top: -8px;
+	background-image: url(../images/banner.gif);
+}
+.banner img{
+	width: 550px;
+	height: 105px;
+	position: relative;
+	top: 143px;
+	left: 408px;
+}
+.menu{
+	width: 1338px;
+	height: 35px;
+	background-color: #e0e0e0;
+	margin-top:-16px;
+}
+.menu ul li{
+	list-style: none;
+	float: left;
+	margin-left: 25px;
+	margin-top:5px;
+}
+.menu ul li a{
+	text-decoration: none;
+	color: #522a06;
+	font-weight: bold;
+}
+.menu ul li a:hover{
+	text-decoration: underline;
+}
+.shouye{
+	margin-left:155px;
+}
+.text{
+	margin-left: 75px;
+}
+.ss{
+	background-color: #522a06;
+	color:white;
+}
+#content p{
+	color:#522a06;
+	font-weight: bold;
+	margin-left: 65px;
+}
+h1{
+	text-align: center;
+	color: #522a06;
+	font-family: '楷体';
+}
+hr{
+	width: 750px;
+	margin-left: 55px;
+}
+h5{
+	text-align: center;
+	color: #708090;
+}
+
+.two{
+	width: 800px;
+	height: 1200px;
+	float: left;
+	margin-left: 65px;
+	margin-top: 70px;
+}
+.two p{
+	line-height: 25px;
+}
+.three{
+	width: 200px;
+	height: 1200px;
+	float: left;
+}
+.three2 {
+	width: 300px;
+	height: 500px;
+	margin-left: 50px;
+	margin-top: 90px;
+	background-image: url(../images/lanse.gif);
+
+}
+.xiaoyu{
+	width: 350px;
+	height: 80px;
+	position: relative;
+	top: 50px;
+	left: 30px;
+}
+.three2 ul{
+	margin-top: 30px;
+}
+.three2 ul li{
+	list-style: none;
+	line-height: 30px;
+	color: #522a06;
+}
+.png1{
+	width: 100px;
+	height: 80px;
+	position: relative;
+	top: 30px;
+	left: 30px;
+}
+.png2{
+	width: 100px;
+	height: 80px;
+	position: relative;
+	left: 180px;
+}
+.three1 img{
+	width: 200px;
+	height: 200px;
+	margin-top: -80px;
+	margin-left: 150px;
+}
+.three textarea{
+     margin-top: 80px;
+     margin-left: 55px;
+}
+#footer{
+	width: 1338px;
+	height:200px;
+	margin-top: 1250px;
+	border-top: 5px #e0e0e0 solid;
+	background-image: url(../images/footer.gif);
+}
+#footer ul{
+	margin-left: 305px;
+	position: relative;
+	right: 450px;
+}
+#footer ul li{
+	list-style:none;
+	float: left;
+	margin-left: 20px;
+
+}
+#footer ul li a{
+	text-decoration: none;
+	color: #522a06;
+}
+#footer img{
+	margin-left: -50px;
+}
+.foot{
+	margin-left: 425px;
+	line-height: 30px;
+	color:#522a06;
+}
+
