@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>QQ聊天</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		ul,ol,li{
+			list-style: none;
+		}
+		.clearFix:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		#wrap{
+			width: 678px;
+			height: 615px;
+			margin: 10px auto;
+			border: 1px solid #000; 
+			background-color: #f8f7f4;
+		}
+		/*顶部样式*/
+		.header{
+			height: 50px;
+		}
+		.header>span{
+			float: left;
+			margin: 20px 0 0 12px;
+			line-height: 30px;
+		}
+		.headImg{
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background: url(img/head.png) center center;
+			background-size: cover;
+		}
+		/*导航样式*/
+		.nav{
+			height: 40px;
+			line-height: 37px;
+			border-bottom: 1px solid #e2e1df;
+		}
+		.nav>li{
+			float: left;
+			margin: 0 8px;
+			padding: 0 4px;
+			cursor: default;
+			color: #767676;
+		}
+		.nav>li:last-child:after{
+			content: "▼";
+			font-size: 10px;
+			margin-left: 5px;
+		}
+		.nav>li:hover{
+			color: #000;
+		}
+		.nav>.active{
+			color: #000;
+			border-bottom: 3px solid #009bdb;
+		}
+		/*底部主体样式*/
+		.footer>div{
+			float: left;
+		}
+		.notice{
+			width: 200px;
+			height: 525px;
+			border-left: 1px solid #e2e1df;
+
+		}
+		/*消息框样式*/
+		.talk{
+			position: relative;
+			width: 476px;
+		}
+		.talkMsg{
+			position: relative;
+			width: 476px;
+			height: 400px;
+			overflow-y: scroll;
+			border-bottom: 1px solid #e2e1df;
+		}
+		.time{
+			text-align: center;
+			color: #808080;
+			font-size: 10px;
+			line-height: 30px;
+		}
+		.talkInp{
+			height: 124px;
+		}
+		.myHead{
+			float: right;
+			margin-right: 12px;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background: url(img/myHead.jpg) center center;
+			background-size: cover;
+		}
+		.content{
+			float: right;
+		}
+		.conText{
+			padding: 10px;
+			max-width: 380px;
+			line-height: 22px;
+			border-radius: 8px;
+			margin-right: 10px;
+			font-size: 12px;
+			float: left;
+			background-color: #dfdddb;
+		}
+		.area{
+			width: 456px;
+			padding: 5px 10px;
+			height: 50px;
+			resize: none;
+			outline: none;
+			border: none;
+			background-color: #f8f7f4;
+		}
+		.btn{
+			float: right;
+		}
+		.btn li{
+			font-weight: bold;
+			cursor: default;
+			display: block;
+			float: left;
+			height: 24px;
+			line-height: 24px;
+			padding: 0 16px;
+			margin-right: 12px;
+			border-radius: 4px;
+			font-size: 12px;
+			background-color: #dbd1be;
+		}
+		.send{
+			position: relative;
+		}
+		.send:after{
+			content: "▼";
+			color: #6e695f;
+			margin-left: 15px;
+		}
+		.warning{
+			width: 150px;
+			height: 50px;
+			border: 1px solid lightblue;
+			border-radius: 8px;
+			padding: 0 5px;
+			position: absolute;
+			left: -70px;
+			top: -55px;
+			display: none;
+		}
+		.rightBox{
+			display: none;
+			z-index: 1px;
+			position: absolute;
+			z-index: 9999px;
+			width: 130px;
+			height:146px;
+			border:1px solid #dcdcdc;
+		}
+		.rightBox>ul>li>p{
+			padding-left: 5px;
+			display: block;
+			width: 95px;
+			height: 24px;
+			font-size: 13px;
+			background-color:white;
+			line-height: 24px;
+		}
+		.rightBox>ul>li>p>span{
+			text-decoration: underline;
+		}
+		.bg{
+			float: left;
+			display: block;
+			width: 30px;
+			height: 24px;
+			background-color:#dcdcdc;
+		}
+		.bg3{
+			float: left;
+			display: block;
+			width: 30px;
+			height: 25px;
+			background-color:#dcdcdc;
+		}
+		.a1{
+			float: left;
+		}
+		.a3{
+			float: left;
+			border-top:1px solid #dcdcdc;
+		}
+		.a3{
+			float: left;
+			border-top:1px solid #dcdcdc;
+		}
+		.rightBox>ul>li>p:hover{
+			background-color:blue;
+		}
+		.cl{
+			width: 476px;
+			height:30px;
+		}
+		.cl>ul>li{
+			float: left;
+		}
+		.look{
+			display: none;
+			position: absolute;
+			bottom: 125px;
+			width: 474px;
+			height:243px;
+			border:2px solid #dcdcdc;
+			overflow-y: scroll;
+			background-color: white;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="header">
+			<span class="headImg"></span>
+			<span>16级七八班事务通知群</span>
+		</div>
+		<ul class="nav">
+			<li class="active">聊天</li>
+			<li>公告</li>
+			<li>相册</li>
+			<li>文件</li>
+			<li>活动</li>
+			<li>设置</li>
+		</ul>
+		<div class="footer">
+			<div class="talk">
+				<div class="talkMsg">
+					<div class="rightBox">
+						<ul>
+							<li><span class="bg"></span><p class="a1">复制(<span>C</span>)</p></li>
+							<li><span class="bg"></span><p class="a1">全部选择(<span>A</span>)</p></li>
+							<li><span class="bg3"></span><p class="a3">显示比例</p>
+							</li>
+							<li><span class="bg"></span><p class="a1">使用多彩气泡</p></li>
+							<li><span class="bg"></span><p class="a1">设置多彩气泡</p></li>
+							<li><span class="bg3"></span><p class="a3">清屏</p></li>
+						</ul>
+					</div>
+					<ul id="msgBox">
+						<li class="clearFix">
+							<p class="time">2017/10/12 16:59:32</p>
+							<p class="content">
+								<span class="conText">好好学习</span>
+								<span class="myHead"></span>
+							</p>
+						</li>
+						<li class="clearFix">
+							<p class="time">2017/10/12 16:59:32</p>
+							<p class="content">
+								<span class="conText">天天向上</span>
+								<span class="myHead"></span>
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="talkInp">
+					<div class="cl">
+						<ul>
+							<li><img src="img/it0.png"></li>
+							<li><img src="img/it1.png" id="bq"></li>
+							<li><img src="img/it2.png"></li>
+							<li><img src="img/it3.png"></li>
+							<li><img src="img/it4 .png"></li>
+							<li><img src="img/it5.png"></li>
+							<li><img src="img/it6.png"></li>
+							<li><img src="img/it7.png"></li>
+							<li><img src="img/it8.png"></li>
+							<li><img src="img/it9.png"></li>
+							<li><img src="img/it10.png"></li>
+						</ul>
+					</div>
+					<div class="look">
+						
+					</div>
+					<textarea class="area"></textarea>
+					<ul class="btn">
+						<li>关闭(c)</li>
+						<li class="send">
+							发送(s)
+							<p class="warning">发送内容不能为空，请重新输入</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="notice">
+
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var send = document.getElementsByClassName('send')[0];
+	var area = document.getElementsByClassName('area')[0];
+	var warning = document.getElementsByClassName('warning')[0];
+	var msgBox = document.getElementById('msgBox');
+	var talkMsg=document.getElementsByClassName('talkMsg')[0];
+	var talk=document.getElementsByClassName('talk')[0];
+	var rightBox=document.getElementsByClassName('rightBox')[0];
+	var a3=document.getElementsByClassName('a3');
+	var a1=document.getElementsByClassName('a1');
+	var bg=document.getElementsByClassName('bg');
+	var bg3=document.getElementsByClassName('bg3');
+	var bq=document.getElementById('bq');
+	var look=document.getElementsByClassName('look')[0];
+	var timer;
+	var s=true;
+	var k=1;
+	//点击右键，出现框框
+	talkMsg.oncontextmenu=function(e){
+		e.preventDefault();
+		rightBox.style.left=e.clientX-talk.offsetLeft+'px';
+		rightBox.style.top=e.clientY-talk.offsetTop+'px';
+		rightBox.style.display='block';
+	}
+	for(var i=0;i<a1.length;i++)
+	{
+		a1[i].index=i;
+		a1[i].onmouseover=function(){
+			bg[this.index].style.backgroundColor='blue';
+		}
+	}
+	for(var i=0;i<a1.length;i++)
+	{
+		a1[i].index=i;
+		a1[i].onmouseout=function(){
+			bg[this.index].style.backgroundColor='#dcdcdc';
+		}
+	}
+	for(var i=0;i<a3.length;i++)
+	{
+		a3[i].index=i;
+		a3[i].onmouseover=function(){
+			bg3[this.index].style.backgroundColor='blue';
+		}
+	}
+	for(var i=0;i<a3.length;i++)
+	{
+		a3[i].index=i;
+		a3[i].onmouseout=function(){
+			bg3[this.index].style.backgroundColor='#dcdcdc';
+		}
+	}
+	document.onclick=function(){
+		rightBox.style.display='none';
+	}	
+	//点击表情
+	bq.onclick=function(){
+		if(s&&k==1){
+			for(var n=1,j=0;n<133;n++,j++)
+			{
+				look.innerHTML+="<img src='img/QQ/"+n+".gif'/>";
+				look.children[j].style.marginLeft=20+'px';
+		    }
+		    look.style.display='block';
+		}
+		k=2;
+		if(s&&k==2)
+		{
+			look.style.display='block';
+		}
+		else
+		{
+			look.style.display='none';
+		}
+		s=!s;
+	}
+	// 回车发送消息
+	area.onkeydown = function(e){
+		if(e.keyCode == 13&&e.shiftKey==false){
+			send.onclick();
+			e.preventDefault();
+		}
+	}
+
+	// 点击发送按钮发送消息
+	send.onclick = function(){
+		if (area.value == '') {
+			warning.style.display = 'block';
+			clearTimeout(timer);
+			timer = setTimeout(function(){
+				warning.style.display = 'none';
+			},1000)
+		}else{
+			var li = document.createElement('li');
+			li.className = 'clearFix';
+			li.innerHTML = '<p class="time">'+new Date().toLocaleString()+'</p><p class="content"><span class="conText">'+area.value+'</span><span class="myHead"></span></p>';
+			msgBox.appendChild(li);
+			li.scrollIntoView();
+			area.value ='';
+			area.focus();
+		}
+	}
+</script>
+</html>
