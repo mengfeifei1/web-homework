@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>商品评估</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			#head{
+				width: 540px;
+				height: 350px;
+				margin: 30px auto;
+			}
+			#banner{
+				width:540px;
+				height: 40px;
+				background-color: #f5fffa;
+			}
+			#banner>p{
+				font-size: 16px;
+				font-weight: bold;
+				margin-left: 10px;
+				padding-top: 7px;
+			}
+			#images{
+				width: 200px;
+				height: 20px;
+				margin-left: 14px;
+				margin-top: 8px;
+			}
+			#images>div{
+				float: left;
+				margin-left: 8px;
+			}
+			#talk{
+				width: 500px;
+				height: 250px;
+				margin: 10px auto;
+			}
+			button{
+				float: right;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="head">
+			<div id="banner"><p>宝贝与描述相符(打分匿名)</p></div>
+			<div id="images">
+				<div><img src="images/star0.png"></div>
+				<div><img src="images/star0.png"></div>
+				<div><img src="images/star0.png"></div>
+				<div><img src="images/star0.png"></div>
+				<div><img src="images/star0.png"></div>
+			</div>
+			<div id="talk">
+				<textarea cols="69px" rows="15px">
+				</textarea>
+				<button>公开评论</button>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		var i,j;
+		var con=false;
+		var arr=["非常差！","一般吧！","比较好！","非常好！","超级好!"];
+		var star = document.getElementsByTagName('img');
+		var txt = document.getElementsByTagName('textarea')[0];
+		for(i=0;i<5;i++)
+		{	
+			star[i].index=i;
+			star[i].onmouseover=function()
+			{
+				if(!con)
+				{
+					if(this.index<2)
+					{
+						txt.innerHTML=arr[this.index];
+						for(j=this.index;j>=0;j--)
+						{
+							star[j].src="images/star1.png";
+						}
+					}
+					else
+					{
+						txt.innerHTML=arr[this.index];
+						for(j=this.index;j>=0;j--)
+						{
+							star[j].src="images/star2.png";
+						}
+					}
+				}
+			}
+		}
+		for(i=0;i<5;i++)
+		{	
+			star[i].index=i;
+			star[i].onmouseout=function()
+			{
+				if(!con)
+				{
+					txt.innerHTML=' ';
+					for(j=this.index;j>=0;j--)
+						{
+							star[j].src="images/star0.png";
+						}
+				}
+			}
+		}
+		for(i=0;i<5;i++)
+		{	
+
+			star[i].index=i;
+			star[i].onclick=function()
+			{
+				if(this.index<2)
+				{
+					txt.innerHTML=arr[this.index];
+					for(j=this.index;j>=0;j--)
+					{
+						con=true;
+						star[j].src="images/star1.png";
+					}
+				}
+				else
+				{
+					txt.innerHTML=arr[this.index];
+					for(j=this.index;j>=0;j--)
+					{
+						con=true;
+						star[j].src="images/star2.png";
+					}
+				}
+			}
+		}
+	</script>
+</html>
