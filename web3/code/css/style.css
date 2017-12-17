@@ -1,0 +1,27 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#picScroll{
+	width: 600px;
+	height: 250px;
+	white-space:nowrap;
+	overflow: hidden;
+	margin: 30px auto;
+	border:1px solid red;
+	position: relative;
+}
+#picScroll1{
+	width: 1400px;
+	height: 250px;
+	position: absolute;
+}
+#picScroll2{
+	width: 1400px;
+	height: 250px;
+	position: absolute;
+}
+img{
+	width: 250px;
+	height:250px;
+}
